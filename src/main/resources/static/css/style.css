@@ -1,0 +1,150 @@
+/* main layout */
+.navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: 0.05em;
+    color: #333;
+    user-select: none;
+}
+.custom-overlay { 
+    background:#fff; 
+    border:1px solid #ccc; 
+    padding:10px 14px; 
+    border-radius:8px; 
+    box-shadow:0 2px 6px rgba(0,0,0,0.2); 
+    font-size:14px; 
+    position:relative;
+}
+.custom-overlay .close-btn { 
+    position:absolute; 
+    top:4px; 
+    right:6px; 
+    cursor:pointer; 
+    color:#888;
+}
+.custom-overlay img { 
+    width:100px; 
+    height:80px; 
+    object-fit:cover; 
+    border-radius:4px; 
+    margin-bottom:6px;
+}
+.main-container {
+    height: calc(100vh - 56px);
+    display: flex;
+    overflow: hidden;
+}
+
+/* 세로 메뉴 스타일 */
+#side-menu {
+    width: 60px;
+    background: #fff;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+}
+#side-menu button {
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: 15px 0;
+    cursor: pointer;
+    font-size: 20px;
+    color: #555;
+    transition: background 0.2s, color 0.2s;
+}
+#side-menu button.active {
+    background: #007bff;
+    color: white;
+}
+#side-menu button:hover:not(.active) {
+    background: #e7f1ff;
+    color: #007bff;
+}
+
+/* 검색 & 찜 섹션 */
+#search-section, #fav-section {
+    max-width: 600px;
+    display: none;
+    overflow-y: auto;
+    height: calc(100vh - 56px);
+    width: 450px; /* 고정 넓이 유지 */
+    box-sizing: border-box;
+    padding: 1rem 1.5rem;
+    background: #fff;
+    border-left: 1px solid #ddd;
+}
+#search-section.active, #fav-section.active {
+    display: flex;
+    flex-direction: column;
+}
+/* 추천 받기 버튼 가운데 정렬 및 적당한 너비 */
+#search-section form button[type="submit"] {
+    display: block;
+    margin: 1rem auto 0 auto; /* 상단 여백 1rem, 좌우 자동 마진으로 가운데 정렬 */
+    width: 60%; /* 적당한 너비, 필요시 px 등으로 조정 가능 */
+    max-width: 250px; /* 최대 너비 제한 */
+}
+/* 리스트 스크롤 영역 */
+#restaurantList, #favList {
+    max-height: calc(100vh - 230px);
+    overflow-y: auto;
+    margin-top: 1rem;
+}
+
+#restaurantList li, #favList li {
+    cursor: pointer;
+    padding: 12px 10px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+#restaurantList li:hover, #favList li:hover {
+    background-color: #f0f8ff;
+}
+
+/* 지도 */
+#map {
+    flex-grow: 1;
+    height: calc(100vh - 56px);
+}
+
+/* 즐겨찾기 버튼 */
+.fav-btn {
+    font-size: 18px;
+    color: #dc3545;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+.fav-btn:hover {
+    color: #a71d2a;
+}
+.fav-remove-btn {
+    font-size: 16px;
+    color: #dc3545;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+.fav-remove-btn:hover {
+    color: #a71d2a;
+}
+
+/* 블링 애니메이션 */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
+}
+
+.animate-blink {
+    animation: blink 1.2s infinite;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #dc3545;
+}
