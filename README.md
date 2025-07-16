@@ -111,6 +111,6 @@
 
 ## 프로젝트 실행 스크린샷
 
-(여기에 주요 화면 이미지 삽입 가능)
+<img src="src/main/resources/static/img/wteapp.png" alt="오먹 실행 이미지" width="300" />
 
 ---
